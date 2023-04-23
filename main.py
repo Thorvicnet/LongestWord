@@ -45,7 +45,7 @@ def sanitaze(mot: str) -> str:
     Returns:
         str: mot sans caractères spéciaux
     """
-    return "".join([x for x in mot if x.isalpha()])
+    return "".join([x for x in mot if x.isalpha()]) # isalpha() permet de savoir si un caractère est une lettre
 
 
 @timeit
@@ -134,7 +134,7 @@ def changeDict() -> None:
 
 
 window = tk.Tk()
-window.iconphoto(False, tk.PhotoImage(file="images/icon.png")) # Icone de la fenêtre
+window.iconphoto(False, tk.PhotoImage(file="./images/icon.png")) # Icone de la fenêtre
 window["bg"] = "#2C394B"
 window.geometry("1000x500")
 window["pady"] = 10
