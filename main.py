@@ -36,6 +36,18 @@ def indices(mot: str) -> str:
     return "".join(indice)
 
 
+def sanitaze(mot: str) -> str:
+    """Supprime les caractères spéciaux d'un mot.
+
+    Args:
+        mot (str): mot à nettoyer
+
+    Returns:
+        str: mot sans caractères spéciaux
+    """
+    return "".join([x for x in mot if x.isalpha()])
+
+
 @timeit
 def dictWordIndices(listes: list) -> dict:
     """Crée un dictionnaire avec comme clé l'indice d'un mot et comme valeur la liste des mots qui ont cet indice.
@@ -84,7 +96,7 @@ def longestWord() -> str:
     """
     start_time = time.perf_counter()
     global dico
-    tirage = indices(lettersVar.get()) # lettersVar est une variable de type StringVar qui contient la valeur de l'Entry
+    tirage = indices(sanitaze(lettersVar.get())) # lettersVar est une variable de type StringVar qui contient la valeur de l'Entry
     if "dico" not in globals(): # Si le dictionnaire n'existe pas encore
         with open(FILENAME, "r") as f:
             data = f.read().splitlines()
