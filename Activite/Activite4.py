@@ -118,3 +118,29 @@ dico = dictionnaire_indices_mots(data)
 tirage = tirage_lettres(10)
 print(tirage)
 print(mot_le_plus_long(tirage, dico))
+
+
+def rechercheDichotomique(word: str, liste: list) -> int:
+    """Vu que je ne l'utilise pas de tous le TP, le voila pour prouver que je peux le faire.
+
+    Args:
+        word (str): mot à chercher
+        liste (list): liste triée dans laquelle chercher
+
+    Returns:
+        int: index du mot dans la liste ou -1 si le mot n'est pas dans la liste
+    """
+    deb = 0
+    fin = len(liste) - 1
+    while deb <= fin:
+        milieu = (deb + fin) // 2
+        if liste[milieu] == word:
+            return milieu
+        elif liste[milieu] > word:
+            fin = milieu - 1
+        else:
+            deb = milieu + 1
+    return -1 # -1 signifie que le mot n'a pas été trouvé (mieux que None)
+
+
+print(rechercheDichotomique("DINOSAURES", data))

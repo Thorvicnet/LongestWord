@@ -43,7 +43,7 @@ def dictionnaire_indices_mots(listes: list) -> dict:
     return ans
 
 
-def fichier_indice(fichier_in: str, fichier_out: str) -> None:
+def fichier_indice_mots(fichier_in: str, fichier_out: str) -> None:
     """Crée un fichier avec comme clé l'indice d'un mot et comme valeur la liste des mots qui ont cet indice.
 
     Args:
@@ -67,4 +67,4 @@ with open("repertoire_francais_tout.txt", "r") as f:
     listFrenchWords = f.read().splitlines() # Pour ne pas conserver les \n on utilise read puis splitlines qui crée une liste comme readlines mais sans les \n
 
 print(len(dictionnaire_indices_mots(listFrenchWords))) # On trouve 116534 couple d'anagramme (en comptant les mots avec un indice unique) avec le fichier tout
-fichier_indice("repertoire_francais_tout.txt", "anagrammes.txt")
+fichier_indice_mots("repertoire_francais_tout.txt", "anagrammes.txt")

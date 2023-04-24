@@ -5,13 +5,18 @@ from PIL import ImageTk, Image
 import time
 
 
+# ## Variables (supposée constante) ## #
+
 FILENAME = "./repertoire_francais_tout.txt"
+WINDOWNAME = "Mot le plus long"
 
 labels = []
 
+# ### Fonctions ### #
+
 
 def timeit(func):
-    """Décorateur qui calcule le temps d'exécution d'une fonction."""
+    """Décorateur qui calcule le temps d'exécution d'une fonction pour observer les performances."""
     def timeit_wrapper(*args, **kwargs):
         start_time = time.perf_counter()
         result = func(*args, **kwargs)
@@ -139,7 +144,7 @@ window["bg"] = "#2C394B"
 window.geometry("1000x500")
 window["pady"] = 10
 lettersVar = tk.StringVar()
-window.title("Mot le plus long")
+window.title(WINDOWNAME)
 
 entryFrame = tk.Frame(window, highlightthickness=2, highlightbackground="#082032", bg="#2C394B")
 ansFrame = tk.Frame(window, bg="#2C394B")
@@ -173,5 +178,7 @@ randomBtn.grid(row=0, column=2, padx=10, pady=10)
 changeBtn.place(rely=1.0, relx=1.0, x=-10, y=0, anchor=tk.SE) # On place le bouton en bas à droite
 
 window.bind("<Return>", lambda e: addWord()) # Permet d'appuyer sur entrée pour ajouter un mot
+window.bind("<Escape>", lambda e: window.destroy()) # Permet d'appuyer sur échap pour fermer la fenêtre
+window.bind("<F5>", lambda e: lettersVar.set("".join(drawLetters(9)))) # Permet d'appuyer sur F5 pour générer un nouveau tirage
 
 tk.mainloop()
