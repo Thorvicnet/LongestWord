@@ -132,10 +132,11 @@ def changeDict() -> None:
     """Permet de changer le dictionnaire"""
     global dico
     global FILENAME
-    if "dico" in globals(): # Si le dictionnaire existe, on le supprime
-        del dico
     filename = filedialog.askopenfilename(initialdir=".", title="Selectionner un fichier", filetypes=(("text files", "*.txt"), ("all files", "*.*")))
-    FILENAME = filename
+    if filename != "":
+        FILENAME = filename
+        if "dico" in globals(): # Si le dictionnaire existe, on le supprime
+            del dico
 
 
 window = tk.Tk()
