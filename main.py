@@ -95,7 +95,7 @@ def longestWord() -> str:
         list: liste de mots possibles à partir d'un tirage de longueur maximale
     """
     start_time = time.perf_counter()
-    global dico
+    global dico # On utilise la variable globale dico
     tirage = indices(sanitaze(lettersVar.get())) # lettersVar est une variable de type StringVar qui contient la valeur de l'Entry
     if "dico" not in globals(): # Si le dictionnaire n'existe pas encore
         with open(FILENAME, "r") as f:
@@ -148,13 +148,13 @@ lettersEntry = tk.Entry(entryFrame, bg="#334756", fg="white", textvariable=lette
 # ## Images ## #
 
 send = Image.open("./images/paper-plane-border.png") # On ouvre l'image
-send = send.resize((30, 30), Image.ANTIALIAS) # On redimensionne l'image
+send = send.resize((30, 30), Image.Resampling.LANCZOS) # On redimensionne l'image
 send = ImageTk.PhotoImage(send) # On convertit l'image en format utilisable par tkinter
 rnd = Image.open("./images/dice-border.png")
-rnd = rnd.resize((30, 30), Image.ANTIALIAS)
+rnd = rnd.resize((30, 30), Image.Resampling.LANCZOS)
 rnd = ImageTk.PhotoImage(rnd)
 dictionary = Image.open("./images/spell-check-border.png")
-dictionary = dictionary.resize((50, 50), Image.ANTIALIAS)
+dictionary = dictionary.resize((50, 50), Image.Resampling.LANCZOS)
 dictionary = ImageTk.PhotoImage(dictionary)
 
 # ## Boutons ## #
