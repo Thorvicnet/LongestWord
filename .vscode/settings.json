@@ -1,0 +1,5 @@
+{
+    "cmake.sourceDirectory": "/home/thorvicnet/Documents/MotLePlusLong/Activite",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
+}
