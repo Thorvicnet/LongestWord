@@ -7,7 +7,7 @@ import time
 
 # ## Variables (supposée constante) ## #
 
-FILENAME = "./repertoire_francais_tout.txt"
+FILENAME = "./repertoire_english_MIT.txt"
 WINDOWNAME = "Mot le plus long"
 
 labels = []
