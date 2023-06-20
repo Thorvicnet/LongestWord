@@ -8,7 +8,7 @@ import time
 # ## Variables (supposée constante) ## #
 
 FILENAME = "./repertoire_english_MIT.txt"
-WINDOWNAME = "Mot le plus long"
+WINDOWNAME = "Longest Word"
 
 labels = []
 
@@ -111,7 +111,7 @@ def longestWord() -> str:
         temp = [tirage[x] for x in range(len(tirage)) if binary[x] == "1"] # On récupère les lettres du tirage qui sont à 1 en binaire
         if indices("".join(temp)) in dico:
             return " ".join(dico[indices("".join(temp))]) + f" {time.perf_counter() - start_time:.4f}s"
-    return "Pas de mot possible" + f" {time.perf_counter() - start_time:.4f}s"
+    return "No possible word" + f" {time.perf_counter() - start_time:.4f}s"
 
 
 # ### GUI ### #

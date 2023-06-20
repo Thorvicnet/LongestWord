@@ -10,6 +10,11 @@ You can change the dictionary and generate random letters.
 
 (The comments are in French because this was an homework)
 
+## Keyboard controls
+F5: Generate random letters
+Return: Find longest word
+Escape: exit program
+
 ## Installation
 ```
 git clone https://github.com/Thorvicnet/LongestWord
