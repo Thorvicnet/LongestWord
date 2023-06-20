@@ -1,6 +1,6 @@
 # LongestWord
 ## Description
-Find the longest word that possess certain letter with a GUI
+Find the longest word that possesses certain letter with a GUI
 
 
 [![Demo Longest Word](https://media.giphy.com/media/qTI3o6Wy6xxkud9N9p/giphy.gif)](https://youtu.be/5BoX3E7jjDA)
@@ -8,11 +8,13 @@ Find the longest word that possess certain letter with a GUI
 This program uses python3.11.
 You can change the dictionary and generate random letters.
 
-(The comments are in French because this was an homework)
+(The comments are in French because this was a homework)
 
 ## Keyboard controls
 F5: Generate random letters
+
 Return: Find longest word
+
 Escape: exit program
 
 ## Installation
